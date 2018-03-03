@@ -23,12 +23,14 @@ function refreshposts() {
 if(app) {
 app.post=post
 }
+c=document.getElementsByTagName("code")
+Array.prototype.forEach.call(c, function(tag){hljs.highlightBlock(tag)})
 }
 var app = new Vue({
   el: '#app',
   data: {
     post: post,
-  }, 
-	methods: {
-		}
+  }
 })
+refreshposts()
+window.setInterval(function(){refreshposts()},500)

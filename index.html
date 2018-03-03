@@ -19,7 +19,7 @@
 			<br>
 			<h1 class="serif"><a class="no-underline text-black hover:text-grey-darkest" v-bind:href="'posts/'+post.id+'/'">{{post.title}}</a></h1>
 			<br>
-			<p class="sans ml-8" v-html='trimHtml(post.body.replace(new RegExp("<\\/?h[1-6](\\ id\\=\\\".*\\\")?>","g"),""),{limit: 200}).html'></p>
+			<p class="sans ml-8" v-html='trimHtml(post.body.replace(new RegExp("<\\/?h[1-6](\\ id\\=\\\".*\\\")?>","g"),"").             replace(new RegExp("<(\)?img((.)*)?>","g"),""),{limit: 200}).html'></p>
 				<br>
 				<br>
 				<a class="hover:text-blue no-underline text-blue-dark" v-bind:href="'posts/'+post.id+'/'">Read More</a>
