@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/contrib/auto-render.min.js" integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+<link rel="stylesheet" href="https://www.scratchyone.com/katex-host/katex.min.css">
+<script src="https://www.scratchyone.com/katex-host/katex.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif|Roboto" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link href="main.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<body class="h-full bg-grey-lighter w-full flex flex-col justify-center items-center">
+<div class="w-full h-full flex"><div class="min-h-screen h-full m-auto align-middle shadow-lg flex bg-white w-2/3">
+	<div id="app" class="flex flex-col align-middle w-full ml-8 mt-8 mr-8">
+		<h1 class="font-black serif w-full text-center text-5xl"><a href="https://www.scratchyone.com/blog" class="no-underline text-black hover:text-grey-darkest">Scratchyone's Blog</a></h1>
+		<hr>
+		<br>
+		<div class="flex-1 container">
+		<div v-for="post in truncposts" class="ml-8">
+			<br>
+			<h1 class="serif"><a class="no-underline text-black hover:text-grey-darkest" v-bind:href="'posts/'+post.id+'/'">{{post.title}}</a></h1>
+			<br>
+			<p class="sans ml-8" v-html='trimHtml(post.body.replace(new RegExp("<\\/?h[1-6](\\ id\\=\\\".*\\\")?>","g"),""),{limit: 200}).html'></p>
+				<br>
+				<br>
+				<a class="hover:text-blue no-underline text-blue-dark" v-bind:href="'posts/'+post.id+'/'">Read More</a>
+		</div>
+	</div>
+	<br>
+		<a class="hover:text-blue no-underline text-blue-dark" v-if="prev" v-bind:href="'#'+(hashnum+1)">Previous Page</a>
+		<div class="w-auto pin-b text-center mt-4 bg-blue rounded text-white" style="margin: -2rem; margin-bottom: 0rem; margin-top: 2rem; height: 50px"><span style="height: 50px" class="mx-auto align-middle"><i class="far fa-copyright"></i> Scratchyone 2018<br><a class="text-white hover:text-grey-lightest" href="mailto:scratchywon@gmail.com">scratchywon@gmail.com</a></span></div>
+	</div>
+</div>
+	</div>
+</body>
+<script src="main.js"></script>

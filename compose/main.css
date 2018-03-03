@@ -1,0 +1,9 @@
+.headerfont {
+font-family: 'Roboto', sans-serif;
+}
+.serif {
+	font-family: 'Noto Serif', serif;
+}
+.ot {
+	transition: opacity 1s;
+}
