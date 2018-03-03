@@ -44,7 +44,7 @@ function mark(input) {
     });
   txt = converter.makeHtml(input);
   rgex = /\$\(.+?\)\$/g;
-  y = rgex.exec(txt);
+  y = txt.match(rgex);
   if (y) {
 		rep=[]
     Array.prototype.forEach.call(y, function(z) {
