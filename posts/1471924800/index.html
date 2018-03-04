@@ -22,7 +22,7 @@
 			<h1 class="serif"><a class="no-underline text-black">{{post.title}}</a></h1>
 			<h6 class="">Written on {{["January","Febuary","March","April","May","June","July","August","September","October","November","December"][new Date(post.id*1000).getMonth()]}} {{new Date(post.id*1000).getDate()}}, {{new Date(post.id*1000).getFullYear()}} by scratchyone</h6>
 			<br>
-			<p class="sans ml-8" v-html='post.body'></p>
+			<p style="width:90%" class="sans ml-8" v-html='post.body'></p>
 		</div>
 	</div>
 	<br>

@@ -62,7 +62,7 @@ function mark(input) {
   return txt;
 }
 function exportpost() {
-  exported = { title: document.getElementById("posttitle").innerText, body: mark(document.getElementById("mdtext").value), id:Math.round((new Date()).getTime() / 1000)};
+  exported = { title: document.getElementById("posttitle").innerText, body: mark(document.getElementById("mdtext").value), md: document.getElementById("mdtext").value, id:Math.round((new Date()).getTime() / 1000)};
 	x=JSON.stringify(exported)
 	document.getElementById("clip").value=x
 	document.getElementById("clip").style.display="inline"
